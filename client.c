@@ -1,18 +1,17 @@
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include <sys/ipc.h>
-#include <sys/msg.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 #include <unistd.h>
 
 #include "message.h"
 
-/* Client will send 3 messages in total and wait to receive 2 messages, then shutsdown. */
-int main(int argc, char** argv)
+int main(int argc, char** argv) // receive 3 messages and wait for 2
 {
      int server_qid;
      int client_pid = getpid(); /* our own pid */
@@ -22,7 +21,7 @@ int main(int argc, char** argv)
 
      if(argc != 2)
      {
-	  fprintf(stderr, "Usage: %s <key>\n", argv[0]);
+	  fprintf(stderr, "To use:  %s <key>\n", argv[0]);
 	  return 1;
      }
      
@@ -34,39 +33,37 @@ int main(int argc, char** argv)
 	  return 1;
      }
 
-     printf("Client: PID: %i \n", client_pid);
-     printf("Client: Connected to Server Queue ID: %i ...\n", server_qid);
-     printf("Sending Initial Message to server... \n");
+     printf("Client PID: %i \n", client_pid);
+     printf("Connected to server ID: %i ...\n", server_qid);
+     printf("Sending the first message to server... \n");
      
-     // put a message in the queue to notify the server we are listening
-     msgprintf(server_qid, 1, client_pid, "Hi from Client!"); 
-     printf("Client: Waiting for server response. \n");
+     msgprintf(server_qid, 1, client_pid, "This a message from the client"); 
+     printf("Waiting response from the server. \n");
 
-     //wait for a reply (blocking read)
      int receive;
      if((receive = msgrcv(server_qid, msg, RECEIVE_SZ, client_pid, 0)) < 0)
      {
-	  perror("Message Receive Failed.");
+	  perror("Failed to receive message.");
 	  return 1;
      }
      
      //We should get a reply.
-     printf("Client: Received Message from Server:\n\t%s\n", msg->message_text);
+     printf("Message received from server:\n\t%s\n", msg->message_text);
 
-     while(1) //same as for (;;)
+     while(1)
      {
-       printf("Client: Sending Reply.. \n");
+       printf("Sending reply \n");
        msgprintf(server_qid, 1, client_pid, "Send me something!");
        if((receive = msgrcv(server_qid, msg, RECEIVE_SZ, client_pid , 0)) < 0)
 	  {
 	       perror("Message Receive Failed.");
 	       return 1;
 	  }
-	  printf("Client: Received Message from Server:\n\t%s\n", msg->message_text);
+	  printf("Received Message from Server:\n\t%s\n", msg->message_text);
 	  
-	  msgprintf(server_qid, 1, client_pid, "OK Thank you, shutting down.");
-	  break; //client shuts down after receiving 2 messages. 
+	  msgprintf(server_qid, 1, client_pid, "Shutting down. ");
+	  break; 
      }
-     printf("Client: Shutting down client.\n");
+     printf("Client is shutting down.\n");
      return 0;
 }
