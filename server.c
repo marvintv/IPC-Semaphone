@@ -43,10 +43,10 @@ int main(int argc, char** argv)
 	  return 1;
      }
 
-     printf("Server PID: %i \n", getpid());
-     printf("Server Initialized at Key Number: %i \n", key);
-     printf("Initializing %i Threads \n", num_threads);
-     printf("[%i] Clients must connect before server is shut down.\n", num_threads);  
+     printf("Server PID: %d \n", getpid());
+     printf("Server Initialized at Key Number: %d \n", key);
+     printf("Initializing %d Threads \n", num_threads);
+     printf("%d Clients must connect before server is shut down.\n", num_threads);  
 
      if((tids = (pthread_t *) calloc(num_threads, sizeof(pthread_t) ) ) == NULL)
      {
@@ -64,7 +64,7 @@ int main(int argc, char** argv)
      {
 	  if(pthread_create(tids + i, NULL, thread_execute, &semlock)) //directly pass semlock as the args for the execute function
 	  {
-	       fprintf(stderr, "Failed to create thread : %i \n", i);
+	       fprintf(stderr, "Failed to create thread : %d \n", i);
 	       return 1;
 	  }
      }
@@ -73,7 +73,7 @@ int main(int argc, char** argv)
      {
 	  if(pthread_join(tids[i], NULL))
 	  {
-	       fprintf(stderr, "Failed to join thread : %i \n", i);
+	       fprintf(stderr, "Failed to join thread : %d \n", i);
 	       return 1;
 	  }
      }
@@ -142,7 +142,7 @@ int init_client_q(int key)
      int client_id;
      if((client_id = init_q(key)) == -1)
      {
-	  fprintf(stderr, "Failed to initialize client message queue: %i", key);
+	  fprintf(stderr, "Failed to initialize client message queue: %d", key);
 	  return -1;
      }
    

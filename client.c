@@ -33,8 +33,8 @@ int main(int argc, char** argv) // receive 3 messages and wait for 2
 	  return 1;
      }
 
-     printf("Client PID: %i \n", client_pid);
-     printf("Connected to server ID: %i ...\n", server_qid);
+     printf("Client PID: %d \n", client_pid);
+     printf("Connected to server ID: %d ...\n", server_qid);
      printf("Sending the first message to server... \n");
      
      msgprintf(server_qid, 1, client_pid, "This a message from the client"); 
