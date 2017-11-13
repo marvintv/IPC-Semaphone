@@ -21,11 +21,10 @@ int main(int argc, char** argv) // receive 3 messages and wait for 2
 
      if(argc != 2)
      {
-	  fprintf(stderr, "To use:  %s <key>\n", argv[0]);
+	  fprintf(stderr, "How to use:  %s <key>\n", argv[0]);
 	  return 1;
      }
      
-     //obtain the server through a common key.
      key = atoi(argv[1]);
      if((server_qid = init_q(key)) == -1)
      {
@@ -34,8 +33,7 @@ int main(int argc, char** argv) // receive 3 messages and wait for 2
      }
 
      printf("Client PID: %d \n", client_pid);
-     printf("Connected to server ID: %d ...\n", server_qid);
-     printf("Sending the first message to server... \n");
+     printf("Server ID: %d connected \n", server_qid);
      
      msgprintf(server_qid, 1, client_pid, "This a message from the client"); 
      printf("Waiting response from the server. \n");
@@ -47,7 +45,6 @@ int main(int argc, char** argv) // receive 3 messages and wait for 2
 	  return 1;
      }
      
-     //We should get a reply.
      printf("Message received from server:\n\t%s\n", msg->message_text);
 
      while(1)
