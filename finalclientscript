@@ -1,0 +1,38 @@
+Script started on Tue 14 Nov 2017 08:28:15 PM CST
++(0):ERROR:0: Unable to locate a modulefile for 'eclipse'
+phonp002@csel-kh4250-29 (/home/phonp002/Downloads/FinalIPC) % ./client 11
+Client PID: 29475 
+Connected to server ID: 0 ...
+Sending the first message to server... 
+Waiting response from the server. 
+Message received from server:
+	Hello client! This is your response message
+Sending reply 
+Received Message from Server:
+	Enough messages, server is shutting down
+Client is shutting down.
+phonp002@csel-kh4250-29 (/home/phonp002/Downloads/FinalIPC) % ./client 11
+Client PID: 29476 
+Connected to server ID: 0 ...
+Sending the first message to server... 
+Waiting response from the server. 
+Message received from server:
+	Hello client! This is your response message
+Sending reply 
+Received Message from Server:
+	Enough messages, server is shutting down
+Client is shutting down.
+phonp002@csel-kh4250-29 (/home/phonp002/Downloads/FinalIPC) % ./client 11
+Client PID: 29477 
+Connected to server ID: 0 ...
+Sending the first message to server... 
+Waiting response from the server. 
+Message received from server:
+	Hello client! This is your response message
+Sending reply 
+Received Message from Server:
+	Enough messages, server is shutting down
+Client is shutting down.
+phonp002@csel-kh4250-29 (/home/phonp002/Downloads/FinalIPC) % ^Dexit
+
+Script done on Tue 14 Nov 2017 08:28:38 PM CST

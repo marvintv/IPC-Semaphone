@@ -1,0 +1,38 @@
+Script started on Tue 14 Nov 2017 08:28:05 PM CST
++(0):ERROR:0: Unable to locate a modulefile for 'eclipse'
+phonp002@csel-kh4250-29 (/home/phonp002/Downloads/FinalIPC) % ./server 11
+Server PID: 29464 
+Server Initialized at Key Number: 11 
+Initializing 3 Threads 
+[3] Clients must connect before server is shut down.
+(pthread ID 140161410983680) has started. Waiting for client to connect 
+(pthread ID: 140161410983680) has the lock.
+(pthread ID 140161402590976) has started. Waiting for client to connect 
+(pthread ID 140161394198272) has started. Waiting for client to connect 
+Received message From client PID: 29475 
+	 Message:  This a message from the client 
+Received message From client PID: 29475 
+	 Message:  Send me something! 
+Received message From client PID: 29475 
+	 Message:  Shutting down.  
+Server: Waiting for next client... 
+(pthread ID: 140161402590976) has the lock.
+Received message From client PID: 29476 
+	 Message:  This a message from the client 
+Received message From client PID: 29476 
+	 Message:  Send me something! 
+Received message From client PID: 29476 
+	 Message:  Shutting down.  
+Server: Waiting for next client... 
+(pthread ID: 140161394198272) has the lock.
+Received message From client PID: 29477 
+	 Message:  This a message from the client 
+Received message From client PID: 29477 
+	 Message:  Send me something! 
+Received message From client PID: 29477 
+	 Message:  Shutting down.  
+Server: Waiting for next client... 
+Info: All threads complete. Shutting Down Server ... 
+phonp002@csel-kh4250-29 (/home/phonp002/Downloads/FinalIPC) % ^Dexit
+
+Script done on Tue 14 Nov 2017 08:28:41 PM CST
