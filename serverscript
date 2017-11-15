@@ -1,0 +1,38 @@
+Script started on Mon 13 Nov 2017 05:43:22 PM CST
++(0):ERROR:0: Unable to locate a modulefile for 'eclipse'
+phonp002@csel-kh4250-03 (/home/phonp002/Downloads/IPC-Semaphone-master) % ./[K[K./server 11
+Server: PID: 3693 
+Server: Server Initialized at Key Number: 11 
+Info: Initializing 3 Threads ...
+Info: [3] Clients must connect before the server will shut down.
+Server: (pthread ID 139842311984896) has started. Waiting for client to connect ...
+Server: (pthread ID: 139842311984896) has the lock.
+Server: (pthread ID 139842303592192) has started. Waiting for client to connect ...
+Server: (pthread ID 139842295199488) has started. Waiting for client to connect ...
+Server: Received message From Client: PID: 3712 
+	 Message:  Hi from Client! 
+Server: Received message From Client: PID: 3712 
+	 Message:  Send me something! 
+Server: Received message From Client: PID: 3712 
+	 Message:  OK Thank you, shutting down. 
+Server: Waiting for next client... 
+Server: (pthread ID: 139842303592192) has the lock.
+Server: Received message From Client: PID: 3714 
+	 Message:  Hi from Client! 
+Server: Received message From Client: PID: 3714 
+	 Message:  Send me something! 
+Server: Received message From Client: PID: 3714 
+	 Message:  OK Thank you, shutting down. 
+Server: Waiting for next client... 
+Server: (pthread ID: 139842295199488) has the lock.
+Server: Received message From Client: PID: 3715 
+	 Message:  Hi from Client! 
+Server: Received message From Client: PID: 3715 
+	 Message:  Send me something! 
+Server: Received message From Client: PID: 3715 
+	 Message:  OK Thank you, shutting down. 
+Server: Waiting for next client... 
+Info: All threads complete. Shutting Down Server ... 
+phonp002@csel-kh4250-03 (/home/phonp002/Downloads/IPC-Semaphone-master) % ^Dexit
+
+Script done on Mon 13 Nov 2017 05:43:53 PM CST
