@@ -28,7 +28,7 @@ Step 3. You will need to start the client with the same key for the queue.
 Step 4.
 	The client process will send 3 messages, receive 2 from the server and then end its process/shutdown.
 Step 5. 
-	Repeat Step 3 a few more times to create more clients for other threads in the IPC. Inside every thread, there should exist a client, the server will shut down and delete the queue. The default number of threads is 3 (three clients must be initiated before the server will shut down. This can be changed in server.c by changing numOfThreads )
+	Repeat Step 3 a few more times to create more clients for other threads in the IPC. Inside every thread, there should exist a client, the server will shut down and delete the queue. The default number of threads is 3 (three clients must be initiated before the server will shut down. This can be changed in server.c by changing the num_threads value)
 
 
 # Any errors or mistaks?
@@ -52,6 +52,6 @@ We have decided to use unnamed POSIX semaphores instead of the older SystemV sem
 We have found the slides to be very resourceful for us as well as man pages, and online resources such as stackoverflow for solving issues.
 
 
-# Outputs
+# Sample Outputs
 We have scripted some sample outputs of the lab and how it can properly be used in
 serverscript.txt and clientscript.txt
