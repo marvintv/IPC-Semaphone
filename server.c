@@ -28,7 +28,7 @@ int main(int argc, char** argv)
      sem_t semlock;
      pthread_t *tids;
      int i;
-     int num_threads = 3;
+     int numOfThreads = 3;
 
      if(argc != 2)
      {
@@ -45,10 +45,10 @@ int main(int argc, char** argv)
 
      printf("Server PID: %d \n", getpid());
      printf("Server Initialized at Key Number: %d \n", key);
-     printf("Initializing %d Threads \n", num_threads);
-     printf("%d Clients must connect before server is shut down.\n", num_threads);  
+     printf("Initializing %d Threads \n", numOfThreads);
+     printf("%d Clients must connect before server is shut down.\n", numOfThreads);  
 
-     if((tids = (pthread_t *) calloc(num_threads, sizeof(pthread_t) ) ) == NULL)
+     if((tids = (pthread_t *) calloc(numOfThreads, sizeof(pthread_t) ) ) == NULL)
      {
 	  perror("Failed to allocate memory for thread IDs.");
 	  return 1;
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
 	  return 1;
      }
      /* create threads and run execution function */
-     for (i = 0; i < num_threads; i++)
+     for (i = 0; i < numOfThreads; i++)
      {
 	  if(pthread_create(tids + i, NULL, thread_execute, &semlock)) //directly pass semlock as the args for the execute function
 	  {
@@ -69,7 +69,7 @@ int main(int argc, char** argv)
 	  }
      }
      /* Start Cleanup: Execution complete, join threads for result */
-     for (i = 0; i < num_threads; i++)
+     for (i = 0; i < numOfThreads; i++)
      {
 	  if(pthread_join(tids[i], NULL))
 	  {
