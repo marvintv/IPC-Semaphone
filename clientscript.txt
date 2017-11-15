@@ -1,0 +1,43 @@
+Script started on Tue 14 Nov 2017 07:21:46 PM CST
+]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ ./client 11
+Client PID: 22980 
+Connected to server ID: 32768 ...
+Sending the first message to server... 
+Waiting response from the server. 
+Message received from server:
+	Hello client! This is your response message
+Sending reply 
+Received Message from Server:
+	Enough messages, server is shutting down
+Client is shutting down.
+]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ ./client 11
+Client PID: 22981 
+Connected to server ID: 32768 ...
+Sending the first message to server... 
+Waiting response from the server. 
+Message received from server:
+	Hello client! This is your response message
+Sending reply 
+Received Message from Server:
+	Enough messages, server is shutting down
+Client is shutting down.
+]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ ./client 11
+Client PID: 22982 
+Connected to server ID: 32768 ...
+Sending the first message to server... 
+Waiting response from the server. 
+Message received from server:
+	Hello client! This is your response message
+Sending reply 
+Received Message from Server:
+	Enough messages, server is shutting down
+Client is shutting down.
+]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ script
+Script started, file is typescript
+]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ exist[K[Kt
+exit
+Script done, file is typescript
+]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ exit
+exit
+
+Script done on Tue 14 Nov 2017 07:22:15 PM CST

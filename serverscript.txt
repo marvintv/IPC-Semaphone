@@ -1,0 +1,38 @@
+Script started on Tue 14 Nov 2017 07:21:28 PM CST
+]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ ./server 11
+Server PID: 22965 
+Server Initialized at Key Number: 11 
+Initializing 3 Threads 
+[3] Clients must connect before server is shut down.
+(pthread ID 140204799551232) has started. Waiting for client to connect 
+(pthread ID: 140204799551232) has the lock.
+(pthread ID 140204807943936) has started. Waiting for client to connect 
+(pthread ID 140204816336640) has started. Waiting for client to connect 
+Received message From client PID: 22980 
+	 Message:  This a message from the client 
+Received message From client PID: 22980 
+	 Message:  Send me something! 
+Received message From client PID: 22980 
+	 Message:  Shutting down.  
+Server: Waiting for next client... 
+(pthread ID: 140204807943936) has the lock.
+Received message From client PID: 22981 
+	 Message:  This a message from the client 
+Received message From client PID: 22981 
+	 Message:  Send me something! 
+Received message From client PID: 22981 
+	 Message:  Shutting down.  
+Server: Waiting for next client... 
+(pthread ID: 140204816336640) has the lock.
+Received message From client PID: 22982 
+	 Message:  This a message from the client 
+Received message From client PID: 22982 
+	 Message:  Send me something! 
+Received message From client PID: 22982 
+	 Message:  Shutting down.  
+Server: Waiting for next client... 
+Info: All threads complete. Shutting Down Server ... 
+]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ exit
+exit
+
+Script done on Tue 14 Nov 2017 07:22:20 PM CST
