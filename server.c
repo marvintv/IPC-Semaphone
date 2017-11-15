@@ -17,7 +17,7 @@
 
 #include "message.h"
 
-void receiveMessageFromClient(MESSAGE* msg, int receive); 
+void receiveMessageFromClient(MESSAGE* msg, int receive);
 void *thread_execute(void *argv);
 
 static int q_id; // queue ID for IPC
@@ -35,7 +35,7 @@ int main(int argc, char** argv)
 	  fprintf(stderr, "How to use:  %s <key>\n", argv[0]);
 	  return 1;
      }
-     
+
      int key = atoi(argv[1]);
      if((q_id = init_q(key)) == -1)
      {
@@ -43,10 +43,10 @@ int main(int argc, char** argv)
 	  return 1;
      }
 
-     printf("Server PID: %i \n", getpid());
-     printf("Server Initialized at Key Number: %i \n", key);
-     printf("Initializing %i Threads \n", num_threads);
-     printf("[%i] Clients must connect before server is shut down.\n", num_threads);  
+     printf("Server PID: %d \n", getpid());
+     printf("Server Initialized at Key Number: %d \n", key);
+     printf("Initializing %d Threads \n", num_threads);
+     printf("%d Clients must connect before server is shut down.\n", num_threads);
 
      if((tids = (pthread_t *) calloc(num_threads, sizeof(pthread_t) ) ) == NULL)
      {
@@ -64,7 +64,7 @@ int main(int argc, char** argv)
      {
 	  if(pthread_create(tids + i, NULL, thread_execute, &semlock)) //directly pass semlock as the args for the execute function
 	  {
-	       fprintf(stderr, "Failed to create thread : %i \n", i);
+	       fprintf(stderr, "Failed to create thread : %d \n", i);
 	       return 1;
 	  }
      }
@@ -73,7 +73,7 @@ int main(int argc, char** argv)
      {
 	  if(pthread_join(tids[i], NULL))
 	  {
-	       fprintf(stderr, "Failed to join thread : %i \n", i);
+	       fprintf(stderr, "Failed to join thread : %d \n", i);
 	       return 1;
 	  }
      }
@@ -98,7 +98,7 @@ void *thread_execute(void *argv)
 	  int receive = 0;
 	  while(sem_wait(lock) == -1)
 	  {
-	       if(errno != EINTR) 
+	       if(errno != EINTR)
 	       {
 		    perror("Thread failed to lock semaphore");
 		    return NULL;
@@ -106,13 +106,13 @@ void *thread_execute(void *argv)
 	  }
 	  printf("(pthread ID: %lu) has the lock.\n", (unsigned long) pthread_self());
 	  receiveMessageFromClient(msg, receive);
-	  
+
 	  msgprintf(q_id, msg->pid, serverPID, "Hello client! This is your response message");
-	  
+
 	  receiveMessageFromClient(msg, receive);
-	  
+
 	  msgprintf(q_id, msg->pid, serverPID, "Enough messages, server is shutting down");
-	  
+
 	  receiveMessageFromClient(msg, receive);
 
 	  if(sem_post(lock) == -1)
@@ -133,7 +133,7 @@ void receiveMessageFromClient(MESSAGE* msg, int receive)
 	  perror("Message Receive Failed.");
      }
      printf("Received message From client PID: %ld \n", msg->pid);
-     printf("\t Message:  %s \n", msg->message_text); 	  
+     printf("\t Message:  %s \n", msg->message_text);
 }
 
 // function not used after change in requirements
@@ -142,10 +142,10 @@ int init_client_q(int key)
      int client_id;
      if((client_id = init_q(key)) == -1)
      {
-	  fprintf(stderr, "Failed to initialize client message queue: %i", key);
+	  fprintf(stderr, "Failed to initialize client message queue: %d", key);
 	  return -1;
      }
-   
-     msgprintf(q_id, key, getpid(), "Please go to new client queue."); 
+
+     msgprintf(q_id, key, getpid(), "Please go to new client queue.");
      return client_id;
 }

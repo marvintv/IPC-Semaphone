@@ -10,7 +10,7 @@ int removequeue(int q_id);
 #define RECEIVE_SZ sizeof(MESSAGE) + MAX_SIZE - 1
 
 typedef struct{
-     long message_type;  // destination 
-     long pid;           // origin (source)
+     long message_type;  
+     long pid;          
      char message_text[1];
 }MESSAGE; 

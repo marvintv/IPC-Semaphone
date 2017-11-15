@@ -1,43 +1,38 @@
-Script started on Tue 14 Nov 2017 07:21:46 PM CST
-]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ ./client 11
-Client PID: 22980 
-Connected to server ID: 32768 ...
-Sending the first message to server... 
-Waiting response from the server. 
-Message received from server:
-	Hello client! This is your response message
-Sending reply 
-Received Message from Server:
-	Enough messages, server is shutting down
-Client is shutting down.
-]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ ./client 11
-Client PID: 22981 
-Connected to server ID: 32768 ...
-Sending the first message to server... 
-Waiting response from the server. 
-Message received from server:
-	Hello client! This is your response message
-Sending reply 
-Received Message from Server:
-	Enough messages, server is shutting down
-Client is shutting down.
-]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ ./client 11
-Client PID: 22982 
-Connected to server ID: 32768 ...
-Sending the first message to server... 
-Waiting response from the server. 
-Message received from server:
-	Hello client! This is your response message
-Sending reply 
-Received Message from Server:
-	Enough messages, server is shutting down
-Client is shutting down.
-]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ script
-Script started, file is typescript
-]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ exist[K[Kt
-exit
-Script done, file is typescript
-]0;marvin@marvin-VirtualBox: ~/IPC-Semaphone[01;32mmarvin@marvin-VirtualBox[00m:[01;34m~/IPC-Semaphone[00m$ exit
-exit
+Script started on Mon 13 Nov 2017 05:43:41 PM CST
++(0):ERROR:0: Unable to locate a modulefile for 'eclipse'
+phonp002@csel-kh4250-03 (/home/phonp002/Downloads/IPC-Semaphone-master) % ./clie nt 11
+Client: PID: 3712 
+Client: Connected to Server Queue ID: 32768 ...
+Sending Initial Message to server... 
+Client: Waiting for server response. 
+Client: Received Message from Server:
+	Welcome client!
+Client: Sending Reply.. 
+Client: Received Message from Server:
+	OK that's enough. Please shut down. Goodbye.
+Client: Shutting down client.
+phonp002@csel-kh4250-03 (/home/phonp002/Downloads/IPC-Semaphone-master) % ./clie nt 11
+Client: PID: 3714 
+Client: Connected to Server Queue ID: 32768 ...
+Sending Initial Message to server... 
+Client: Waiting for server response. 
+Client: Received Message from Server:
+	Welcome client!
+Client: Sending Reply.. 
+Client: Received Message from Server:
+	OK that's enough. Please shut down. Goodbye.
+Client: Shutting down client.
+phonp002@csel-kh4250-03 (/home/phonp002/Downloads/IPC-Semaphone-master) % ./clie nt 11
+Client: PID: 3715 
+Client: Connected to Server Queue ID: 32768 ...
+Sending Initial Message to server... 
+Client: Waiting for server response. 
+Client: Received Message from Server:
+	Welcome client!
+Client: Sending Reply.. 
+Client: Received Message from Server:
+	OK that's enough. Please shut down. Goodbye.
+Client: Shutting down client.
+phonp002@csel-kh4250-03 (/home/phonp002/Downloads/IPC-Semaphone-master) % ^Dexit
 
-Script done on Tue 14 Nov 2017 07:22:15 PM CST
+Script done on Mon 13 Nov 2017 05:43:51 PM CST
